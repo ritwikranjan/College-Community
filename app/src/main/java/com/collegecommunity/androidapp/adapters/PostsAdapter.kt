@@ -1,5 +1,6 @@
 package com.collegecommunity.androidapp.adapters
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -11,11 +12,12 @@ import com.collegecommunity.androidapp.models.Post
 class PostsAdapter: ListAdapter<Post,PostsAdapter.ViewHolder>(DiffCallBack) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO("Not yet implemented")
+        return ViewHolder(PostLayoutBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val post = getItem(position)
+        holder.bind(post)
     }
 
 
@@ -34,6 +36,9 @@ class PostsAdapter: ListAdapter<Post,PostsAdapter.ViewHolder>(DiffCallBack) {
 
 
     class ViewHolder(val binding: PostLayoutBinding):RecyclerView.ViewHolder(binding.root) {
+        fun bind(post: Post?) {
+
+        }
 
     }
 

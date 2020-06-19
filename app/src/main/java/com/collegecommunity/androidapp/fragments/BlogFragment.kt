@@ -7,16 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.collegecommunity.androidapp.MainActivity
 import com.collegecommunity.androidapp.R
 import com.collegecommunity.androidapp.RC_SIGN_IN
 import com.collegecommunity.androidapp.databinding.FragmentBlogBinding
 import com.collegecommunity.androidapp.firebaselivedata.FirebaseUserLiveData
+import com.collegecommunity.androidapp.viewmodels.BlogViewModel
 import com.firebase.ui.auth.AuthUI
 
 class BlogFragment : Fragment() {
 
     private lateinit var binding: FragmentBlogBinding
+    private lateinit var viewModel: BlogViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +31,16 @@ class BlogFragment : Fragment() {
         FirebaseUserLiveData().observe(viewLifecycleOwner, Observer {
             if (it == null){
                 launchSignInFlow()
+            }
+        })
+        viewModel = ViewModelProvider(this).get(BlogViewModel::class.java)
+        binding.viewModel = viewModel
+
+        viewModel.addNewPost.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                if(it){
+                    
+                }
             }
         })
 
