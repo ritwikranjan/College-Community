@@ -24,9 +24,9 @@ fun bindImage(imageView: ImageView, imgUrl: String?){
 }
 
 @BindingAdapter("postsList")
-fun bindPosts(recyclerView: RecyclerView, data: List<Post>?){
-    val adapter = recyclerView.adapter as PostsAdapter
-    adapter.submitList(data)
+fun bindPosts(recyclerView: RecyclerView?, data: List<Post>?) {
+    val adapter = recyclerView?.adapter as PostsAdapter?
+    adapter?.submitList(data)
 }
 
 @BindingAdapter("viewVisibilityImg")

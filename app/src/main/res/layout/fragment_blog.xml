@@ -15,6 +15,7 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/posts_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="4dp"
@@ -25,9 +26,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:postsList="@{viewModel.posts}"
-            tools:listitem="@layout/post_layout"
-            tools:itemCount="100"/>
+            tools:itemCount="100"
+            tools:listitem="@layout/post_layout" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/extended_fab"
@@ -39,6 +41,7 @@
             android:text="@string/new_post"
             app:icon="@drawable/ic_launcher_foreground"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:onClick="@{() -> viewModel.onFabClick()}"
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

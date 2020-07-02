@@ -7,4 +7,12 @@
     <string name="new_post">New Post</string>
     <string name="description">Description</string>
     <string name="title">Title</string>
+    <string name="post">Post</string>
+    <string name="add_image">Add Image</string>
+    <string name="like">LIKE</string>
+    <string name="dislike">DISLIKE</string>
+    <string name="message">MESSAGE</string>
+    <string name="username_here">USERNAME HERE</string>
+    <string name="time_stamp">Time Stamp</string>
+    <string name="anonymous_post_hint">Write a new ANONYMOUS Post \nRemember Ideas are Bulletproof</string>
 </resources>
